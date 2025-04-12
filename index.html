@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CryptoRealm</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { margin: 0; background: #1a1a1a; color: white; text-align: center; }
+        button { padding: 10px 20px; font-size: 16px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🏰 CryptoRealm</h1>
+    <div id="game">
+        <p>Здоровье: <span id="health">100</span></p>
+        <button onclick="attack()">⚔️ Атаковать</button>
+        <button onclick="heal()">❤️‍🩹 Лечиться (10 золота)</button>
+    </div>
+    <script>
+        let health = 100;
+        let gold = 0;
+
+        function attack() {
+            const damage = Math.floor(Math.random() * 15) + 5;
+            health -= damage;
+            updateUI();
+            if (health <= 0) {
+                alert("Вы погибли! Игра окончена.");
+            }
+        }
+
+        function heal() {
+            if (gold >= 10) {
+                health += 20;
+                gold -= 10;
+                updateUI();
+            } else {
+                alert("Недостаточно золота!");
+            }
+        }
+
+        function updateUI() {
+            document.getElementById('health').textContent = health;
+        }
+    </script>
+</body>
+</html>
