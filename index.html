@@ -43,4 +43,13 @@
         }
     </script>
 </body>
+    <img src="assets/player.png" id="player" style="width: 64px; position: absolute; left: 50%;">
+<script>
+    // Простая анимация атаки
+    function attackAnimation() {
+        const player = document.getElementById('player');
+        player.style.transform = 'translateX(-30px)';
+        setTimeout(() => { player.style.transform = 'translateX(0)'; }, 200);
+    }
+</script>
 </html>
