@@ -8,6 +8,9 @@
         button { padding: 10px 20px; font-size: 16px; margin: 5px; }
     </style>
 </head>
+<body>
+    <h1>🏰 ArcaneLightGuard</h1>
+    <div id="game">
    <img src="MainGuySpriteSheet.png" id="player" style="width: 64px; position: absolute; left: 50%;">
 <script>
     // Простая анимация атаки
@@ -17,9 +20,6 @@
         setTimeout(() => { player.style.transform = 'translateX(0)'; }, 200);
     }
 </script>
-<body>
-    <h1>🏰 ArcaneLightGuard</h1>
-    <div id="game">
         <p>Здоровье: <span id="health">100</span></p>
         <button onclick="attack()">⚔️ Атаковать</button>
         <button onclick="heal()">❤️‍🩹 Лечиться (10 золота)</button>
